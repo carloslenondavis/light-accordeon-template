@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300);
+
+        body {            
+            background: #45B98F;
+            font-family: 'Roboto Condensed', sans-serif;
+            overflow:hidden;            
+        }
+
+        .accordeon {            
+            margin: auto;
+            margin-top: 10%;
+            padding: 0;
+            transition: all 1.5s ease-in;            
+            width: 400px;
+        }
+
+        .accordeon .header {
+            list-style: none;            
+        }
+
+        .accordeon .header .box {
+            background: #99B998;
+            border-left: 10px solid #86A386;
+            border-radius: 6px 6px 0 0;
+            margin: 0;
+            padding: 15px;
+            position: relative;
+            transition: all 1.5s ease-in;            
+            z-index: 100;
+        }
+
+        .accordeon .header .box .text {
+            margin: 0;
+            font-weight: normal;
+            font-size: 16pt;
+            color: #86A386;  
+            transition: all 1.5s ease-in;          
+        }
+
+        .accordeon .item {
+            list-style: none;
+            background: white;            
+            padding: 10px 15px;         
+            height: 40px;
+            transition: all 1.5s ease-in;
+            position: relative;
+            background: white;
+            overflow: hidden;            
+            transition: all 0.3s ease-in;
+        }
+
+        .accordeon .item.light-color {
+            border-left: 10px solid #C8A182;
+            background: #E4B794;
+        }
+
+        .accordeon .item.light-color .blockquote {
+            border-color: #C8A182;
+        }
+        
+        .accordeon .item.medium-color {
+            border-left: 10px solid #D6736E;
+            background: #F4837D;
+        }
+
+        .accordeon .item.medium-color .blockquote {
+            border-color: #D6736E;
+        }
+        
+        .accordeon .item.dark-color {
+            border-left: 10px solid #CE4053;
+            background: #EA495F;
+        }
+
+        .accordeon .item.dark-color .blockquote {
+            border-color: #CE4053;
+        }
+
+        .accordeon .item.active {
+            height: 80px;            
+        }
+
+        .accordeon .item > .text {
+            font-size: 16px;            
+            font-weight: 800;
+            color: #354135;
+        }
+
+        .accordeon .item .blockquote {
+            padding: 3px 10px;
+            border-left: 3px solid;            
+        }
+
+        .accordeon .item .blockquote .text {
+            margin: 0;
+            color: #f3f3f3;
+        } 
+
+        .accordeon .item:last-child {
+            border-radius: 0 0 6px 6px;
+        }       
+    </style>
+
+    <ul class="accordeon">
+        <li class="header">
+            <h1 class="box">
+                <span class="text">Accordion</span>
+            </h1>
+        </li>
+        <li class="item light-color active">
+            <h3 class="text">Lorem ipsum dolor sit</h3>
+            <div class="blockquote">
+                <p class="text">dolor sit amet</p>
+            </div>
+        </li>
+        <li class="item medium-color">
+            <h3 class="text">Lorem ipsum dolor sit</h3>
+            <div class="blockquote">
+                <p class="text">dolor sit amet</p>
+            </div>
+        </li>
+        <li class="item dark-color">
+            <h3 class="text">Lorem ipsum dolor sit</h3>
+            <div class="blockquote">
+                <p class="text">dolor sit amet</p>
+            </div>
+        </li>
+    </ul>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.accordeon .item').click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
